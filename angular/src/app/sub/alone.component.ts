@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewChecked, AfterContentChecked } from '@angular/core';
+import { Component, Input, AfterViewChecked, AfterContentChecked, OnInit } from '@angular/core';
 
 /**
  * this component should not be re-rendered coz it doesn't depends neither on a service nor 
@@ -11,9 +11,17 @@ import { Component, Input, AfterViewChecked, AfterContentChecked } from '@angula
   template: `<span>I'm alone</span>`,
   styles: [`span { color: blue }`]
 })
-export class AloneComponent implements AfterViewChecked, AfterContentChecked  {
+export class AloneComponent implements OnInit, AfterViewChecked, AfterContentChecked {
+  constructor() {
+      console.info('%c alone created', 'color: blue')
+  }
+
+  ngOnInit() {
+      console.info('%c alone mounted', 'color: blue')
+  }
+
   ngAfterViewChecked() {
-    console.info('%c alone view checked', 'color: blue; font-weight: bold')
+    console.info('%c alone view checked', 'color: blue')
   }
 
   ngAfterContentChecked() {

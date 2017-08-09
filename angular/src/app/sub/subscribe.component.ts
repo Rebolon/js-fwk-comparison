@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, AfterViewChecked, AfterContentChecked } from '@angular/core';
+import { Component, AfterViewChecked, AfterContentChecked, OnInit } from '@angular/core';
 
 /**
  * this component should be re-rendered only when EmitComponent emit a new value
@@ -15,15 +15,23 @@ import { Component, Output, EventEmitter, AfterViewChecked, AfterContentChecked 
   </ol>`,
   styles: [`span { color: blueviolet }`]
 })
-export class SubscribeComponent implements AfterViewChecked, AfterContentChecked  {
+export class SubscribeComponent implements OnInit, AfterViewChecked, AfterContentChecked {
   protected value: string = ''
 
   setValue(value) {
     this.value = value
   }
 
+  constructor() {
+    console.info('%c subscribe created', 'color: blueviolet')
+  }
+
+  ngOnInit() {
+    console.info('%c subscribe mounted', 'color: blueviolet')
+  }
+
   ngAfterViewChecked() {
-    console.info('%c subscribe view checked', 'color: blueviolet; font-weight: bold')
+    console.info('%c subscribe view checked', 'color: blueviolet')
   }
 
   ngAfterContentChecked() {

@@ -15,9 +15,11 @@ export default {
     console.log('%c counter content created', 'color: pink')
     setInterval(() => this.counter++, 2000)
   },
+
   mounted: function () {
     console.log('%c counter content mounted', 'color: pink')
   },
+
   updated: function () {
     console.log('%c counter content updated', 'color: pink')
   }
