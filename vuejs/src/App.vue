@@ -2,13 +2,11 @@
   <ul>
     <li>Main component
       <ul>
-        <li>Hello component : <hello name="name"></hello></li>
-        <li>Counter component : <counter></counter></li>
+        <li>Hello component : <hello v-bind:name=name></hello></li>
         <li>Alone component : <alone></alone></li>
+        <li>Counter component : <counter></counter></li>
         <li>Subscribe & Emit components :
-          <ol>
             <subscribe></subscribe>
-          </ol>
         </li>
       </ul>
     </li>
@@ -26,6 +24,11 @@ export default {
   components: {
     Hello, Counter, Alone, Subscribe
   },
+  data: function () {
+    return {
+      name: 'VueJS 2'
+    }
+  },
   mounted: function () {
     console.info('%c app content mounted', 'color: black')
   },
@@ -36,7 +39,4 @@ export default {
 </script>
 
 <style>
-p {
-  font-family: Lato;
-}
 </style>

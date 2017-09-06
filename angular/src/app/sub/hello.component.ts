@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewChecked, AfterContentChecked } from '@angular/core';
+import { Component, Input, AfterViewChecked, AfterContentChecked, OnInit } from '@angular/core';
 
 /**
  * this component should not be re-rendered because its Input never change
@@ -10,11 +10,19 @@ import { Component, Input, AfterViewChecked, AfterContentChecked } from '@angula
   template: `<span>Hello {{name}}!</span>`,
   styles: [`span { color: orange }`]
 })
-export class HelloComponent implements AfterViewChecked, AfterContentChecked  {
+export class HelloComponent implements OnInit, AfterViewChecked, AfterContentChecked {
   @Input() name: string;
 
+  constructor() {
+    console.info('%c hello created', 'color: orange')
+  }
+
+  ngOnInit() {
+    console.info('%c hello mounted', 'color: orange')
+  }
+
   ngAfterViewChecked() {
-    console.info('%c hello view checked', 'color: orange; font-weight: bold')
+    console.info('%c hello view checked', 'color: orange')
   }
 
   ngAfterContentChecked() {

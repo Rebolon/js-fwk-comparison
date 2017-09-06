@@ -9,7 +9,7 @@ export class AppComponent implements AfterViewChecked, AfterContentChecked {
   name = 'Angular 4';
 
   ngAfterViewChecked() {
-    console.info('%c app view checked', 'color: black; font-weight: bold')
+    console.info('%c app view checked', 'color: black')
   }
 
   ngAfterContentChecked() {
