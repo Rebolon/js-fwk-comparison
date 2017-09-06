@@ -1,4 +1,4 @@
-# Angular 4, VueJS 2
+# Angular 4, VueJS 2, React 15
 ## What ?
 
 We are working on a big project based on Angular (starting with 2, and now using 4). And if we are almost satisfied with
