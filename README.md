@@ -18,6 +18,10 @@ of the components because something has changed inside it ? Other frameworks don
 pattern, but Ng4 does.
 I may do something wrong with Ng4, but i don't understand what, so if you can help me, you're welcome !
 
+[edit]
+When i did this POC, i didn't understood Angular. I now know why it refresh all the tree component and you should have a 
+look at this video which will explain all this in a clear point of view : https://www.youtube.com/watch?v=lmrf_gPIOZU&t=14s
+
 ## Installation
 ### Angular
 
